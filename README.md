@@ -1,3 +1,3 @@
 # Задание 1
 
-!((https://drive.google.com/drive/folders/1Ecf40IZe03Q1ZBMKCavwNj0Y2-Jasp4Q?usp=sharing))
+!(https://drive.google.com/file/d/15LT5G76I2YWsPDO2qHm7xxmDqyw26xzz/view?usp=sharing)
