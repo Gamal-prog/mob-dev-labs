@@ -8,6 +8,14 @@ import androidx.compose.material3.Button
 import androidx.compose.foundation.layout.Column //Column import
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.ui.Alignment
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -23,28 +31,47 @@ class MainActivity : ComponentActivity() {
             MyApplicationTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    //Greeting("Android")
-                    Task_1()
+                    //Task_1()
+                    Task_2()
                 }
             }
         }
     }
 }
 
-//@Composable
-//fun Greeting(name: String, modifier: Modifier = Modifier) {
-//    Text(
-//            text = "Hello $name!",
-//            modifier = modifier
-//    )
-//}
-
 @Composable
 fun Task_1() {
-    //var btnStat by remember { mutableStateOf("Привет мир!") }
+    var txtFldVal by remember { mutableStateOf("Привет, мир!") }
 
-    Column {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Text(text = txtFldVal, fontSize = 24.sp)
 
+        Spacer(modifier = Modifier.height(10.dp))
+
+        Button(onClick = { txtFldVal = "Кнопка нажата" }) {
+            Text("Нажать")
+        }
+    }
+}
+
+@Composable
+fun Task_2() {
+    var cnt by remember { mutableStateOf(0) }
+
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Text(text = "Кол Нажатий = $cnt", fontSize = 24.sp)
+
+        Spacer(modifier = Modifier.height(10.dp))
+
+        Button(onClick = { cnt ++ }) {
+            Text("Увеличить")
+        }
     }
 }
 
@@ -52,7 +79,7 @@ fun Task_1() {
 @Composable
 fun GreetingPreview() {
     MyApplicationTheme {
-        //Greeting("Android")
-        Task_1()
+        //Task_1()
+        Task_2()
     }
 }
