@@ -47,6 +47,11 @@ android {
 }
 
 dependencies {
+    implementation("androidx.navigation:navigation-compose:2.8.1")
+    implementation("androidx.navigation:navigation-fragment:2.8.1")
+    implementation("androidx.navigation:navigation-ui:2.8.1")
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.8.1")
+    androidTestImplementation("androidx.navigation:navigation-testing:2.8.1")
 
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
@@ -63,4 +68,24 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+
+}
+
+dependencies {
+    val nav_version = "2.8.1"
+
+    // Jetpack Compose integration
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+
+    // Views/Fragments integration
+    implementation("androidx.navigation:navigation-fragment:$nav_version")
+    implementation("androidx.navigation:navigation-ui:$nav_version")
+
+    // Feature module support for Fragments
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
+
+    // Testing Navigation
+    androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
+
 }
