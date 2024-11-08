@@ -12,17 +12,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
-//
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
-//
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import net.objecthunter.exp4j.ExpressionBuilder
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -86,8 +82,12 @@ fun DisplayCalculator() {
             ) {
                 row.forEach { label ->
                     Buttons(label, Modifier.weight(1f)) {
-                        //input = handleInput(input, label)
-                        //result = if (label == "=") evaluateExpression(input) else input
+                        if (label == "=") {
+                            result = evaluateExpression(input)
+                        } else {
+                            input += label
+                            result = input
+                        }
                     }
                 }
             }
@@ -107,18 +107,31 @@ fun Buttons(label: String, modifier: Modifier = Modifier, onClick: () -> Unit) {
     }
 }
 
-//@Composable
-//fun Greeting(name: String, modifier: Modifier = Modifier) {
-//    Text(
-//            text = "Hello $name!",
-//            modifier = modifier
-//    )
-//}
+fun evaluateExpression(input: String): String {
+    return try {
+        val expression = input.replace("×", "*").replace("÷", "/")
+        val result = ExpressionEvaluator.evaluate(expression)
+        result.toString()
+    } catch (e: Exception) {
+        "Ошибка"
+    }
+}
+
+object ExpressionEvaluator {
+    fun evaluate(expression: String): Double {
+        return try {
+            val exp = ExpressionBuilder(expression).build()
+            exp.evaluate()
+        } catch (e: Exception) {
+            0.0
+        }
+    }
+}
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     MyApplicationTheme {
-        //Greeting("Android")
+        DisplayCalculator()
     }
 }

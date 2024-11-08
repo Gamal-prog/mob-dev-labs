@@ -47,6 +47,7 @@ android {
 }
 
 dependencies {
+    implementation("net.objecthunter:exp4j:0.4.8")
 
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
@@ -64,3 +65,4 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
+
