@@ -1,3 +1,3 @@
 # Задание 5
 
-![Demo GIF](./)
+![Demo GIF](./lab3-ex5.gif)
