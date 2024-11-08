@@ -85,7 +85,7 @@ fun DisplayCalculator() {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 row.forEach { label ->
-                    CalculatorButton(label, Modifier.weight(1f)) {
+                    Buttons(label, Modifier.weight(1f)) {
                         //input = handleInput(input, label)
                         //result = if (label == "=") evaluateExpression(input) else input
                     }
@@ -97,7 +97,7 @@ fun DisplayCalculator() {
 }
 
 @Composable
-fun CalculatorButton(label: String, modifier: Modifier = Modifier, onClick: () -> Unit) {
+fun Buttons(label: String, modifier: Modifier = Modifier, onClick: () -> Unit) {
     Button(
         onClick = onClick,
         modifier = modifier
