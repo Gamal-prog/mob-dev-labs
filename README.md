@@ -1,3 +1,3 @@
 # Задание 3 и 4
 
-![Demo GIF](./)
+![Demo GIF](./lab2.gif)
