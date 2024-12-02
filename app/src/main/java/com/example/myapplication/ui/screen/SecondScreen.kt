@@ -17,8 +17,7 @@ fun SecondScreen(name: String, age: Int, navigateToThirdScreen: () -> Unit) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Hello, $name!", fontSize = 24.sp)
-        Text("You are $age years old.", fontSize = 18.sp)
+        Text("Hello $age years old $name!", fontSize = 20.sp)
 
         Spacer(modifier = Modifier.height(16.dp))
 

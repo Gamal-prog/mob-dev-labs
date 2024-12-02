@@ -18,7 +18,7 @@ fun ThirdScreen(navigateBack: () -> Unit) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("This is the Third Screen", fontSize = 24.sp)
+        Text("The Third Screen", fontSize = 24.sp)
 
         Spacer(modifier = Modifier.height(16.dp))
 
