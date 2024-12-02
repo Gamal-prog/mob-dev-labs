@@ -1,3 +1,3 @@
 # Результат
 
-![Demo GIF](./)
+![Demo GIF](./video.gif)
