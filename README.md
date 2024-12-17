@@ -1,7 +1,7 @@
 # 1 колонка
 
-![](./col-1.gif)
+![Demo GIF](./col-1.gif)
 
 # 2 колонки
 
-![](./col-2.gif)
+![Demo GIF](./col-2.gif)
