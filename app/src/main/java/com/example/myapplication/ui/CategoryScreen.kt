@@ -9,6 +9,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.myapplication.network.Category
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.ui.unit.dp
 
 
 
@@ -17,16 +23,17 @@ fun CategoryScreen(
     categories: List<Category>,
     navigateToDetail: (Category) -> Unit
 ) {
-    LazyColumn(modifier = Modifier.fillMaxSize()) {
+    LazyVerticalGrid(
+        columns = GridCells.Fixed(2), // Устанавливаем 2 столбца
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(8.dp)
+    ) {
         items(categories) { category ->
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .clickable { navigateToDetail(category) }
-                    .padding(16.dp)
-            ) {
-                Text(text = category.name)
-            }
+            CategoryItem(
+                category = category,
+                navigateToDetail = navigateToDetail
+            )
         }
     }
 }
