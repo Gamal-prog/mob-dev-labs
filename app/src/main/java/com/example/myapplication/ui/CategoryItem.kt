@@ -13,6 +13,7 @@ import coil.compose.rememberAsyncImagePainter
 import androidx.compose.material3.Text
 import com.example.myapplication.network.Category
 
+
 @Composable
 fun CategoryItem(category: Category) {
     Column(

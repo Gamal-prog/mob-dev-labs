@@ -8,6 +8,7 @@ import com.example.myapplication.network.RetrofitClient
 import kotlinx.coroutines.launch
 import com.example.myapplication.network.Category
 
+
 class MainViewModel : ViewModel() {
     private val _categoriesState = mutableStateOf(RecipeState())
     val categoriesState: State<RecipeState> = _categoriesState
