@@ -10,7 +10,7 @@ import com.example.myapplication.ui.LocationViewModel
 import com.example.myapplication.ui.LocationData
 
 class LocationUtils(val context: Context) {
-    // Проверка разрешений
+    
     fun hasLocationPermission(): Boolean {
         return ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
                 ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
@@ -19,7 +19,6 @@ class LocationUtils(val context: Context) {
     private val _fusedLocationClient: FusedLocationProviderClient =
         LocationServices.getFusedLocationProviderClient(context)
 
-    // Запрос обновлений местоположения
     @Suppress("MissingPermission")
     fun requestLocationUpdates(viewModel: LocationViewModel) {
         val locationRequest = com.google.android.gms.location.LocationRequest.Builder(1000)
@@ -37,7 +36,6 @@ class LocationUtils(val context: Context) {
         _fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, android.os.Looper.getMainLooper())
     }
 
-    // Обратное геокодирование
     fun reverseGeocodeLocation(location: LocationData): String {
         val geocoder = android.location.Geocoder(context, java.util.Locale.getDefault())
         val addresses = geocoder.getFromLocation(location.latitude, location.longitude, 1)
